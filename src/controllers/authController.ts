@@ -1,5 +1,4 @@
 import { compare } from "bcrypt";
-import { Request, Response } from "express";
 import { User } from "../models/user";
 
 class AuthController {

@@ -1,6 +1,5 @@
 import { hash } from 'bcrypt';
-import { Request, Response } from 'express';
-import { createToken, getTokeFromHeader, isTokenValid } from './tokenController';
+import { createToken, isTokenValid } from './tokenController';
 import { User } from '../models/user';
 
 class UserController {

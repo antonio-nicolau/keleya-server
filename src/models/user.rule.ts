@@ -8,7 +8,6 @@ export const userRule = {
             .withMessage('Invalid email'),
         check('password')
             .notEmpty()
-            .isLength({ min: 6 })
             .withMessage('invalid password')
     ],
     forSignup: [
@@ -18,7 +17,7 @@ export const userRule = {
             .withMessage('Invalid email'),
         check('password')
             .notEmpty()
-            .isLength({ min: 6 })
+            .isLength({ min: 5 })
             .withMessage('invalid password'),
         check('name')
             .notEmpty()

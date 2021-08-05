@@ -16,14 +16,14 @@ route.post('/api/users', userRule.forSignup, async (req: Request, res: Response)
 
         const controller = new UserController();
         const user = await controller.createUser(req.body);
-
+        
         const token = createToken(user.id, user.email);
 
-        res.header({ 'token': token }).json({
-            'user': JSON.stringify(user),
+        res.header({ token: token }).json({
+            user: JSON.stringify(user),
         });
     } catch (error) {
-        res.json({ 'msg': error.message });
+        res.json({ msg: error.message });
     }
 });
 
@@ -36,11 +36,11 @@ route.patch('/api/users', userRule.forSignup, async (req: Request, res: Response
         const token = getTokeFromHeader(req);
         const controller = new UserController();
         const response = await controller.updateUser(req.body, token);
-        res.header({ 'token': response }).json({
-            'user': 'User updated',
+        res.header({ token: response }).json({
+            user: 'User updated',
         });
     } catch (error) {
-        res.json({ 'msg': error.message });
+        res.json({ msg: error.message });
     }
 });
 
@@ -56,10 +56,10 @@ route.post('/api/users/auth', userRule.forSignIn, async (req: Request, res: Resp
 
         const token = createToken(user.id, user.email);
 
-        res.header({ 'token': token }).json({
-            'user': JSON.stringify(user),
+        res.header({ token: token }).json({
+            user: JSON.stringify(user),
         });
     } catch (error) {
-        res.json({ 'msg': error.message });
+        res.json({ msg: error.message });
     }
 });

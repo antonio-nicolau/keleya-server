@@ -1,4 +1,4 @@
-import { DataTypes, Model, Optional } from "sequelize";
+import { DataTypes, Model } from "sequelize";
 import { db } from "../database";
 import { IUser, UserCreationAtributes } from "./IUser";
 
@@ -52,4 +52,4 @@ User.init({
     timestamps: false,
 })
 
-User.sync().then();
+User.sync();

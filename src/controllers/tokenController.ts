@@ -1,5 +1,5 @@
 import * as jwt from 'jsonwebtoken'
-import { Request, response } from 'express'
+import { Request } from 'express'
 
 const jwtSecret = '0.rfyj3n9nzh'
 
