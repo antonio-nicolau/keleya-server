@@ -8,9 +8,13 @@ To set up the project there are some steps:
   
   yarn install or npm install
   
+  Download and import database to your machine ( mysql database )
+  
   yarn run dev or npm run dev
  
  That's all, after this just run yarn run dev or npm run dev to start server
+ 
+ The database file is in the database folder with keleya name ( src/database/keleya.sql )
 
 ## Endpoints
 ### POST: /api/users
