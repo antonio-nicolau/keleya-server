@@ -5,14 +5,12 @@ A server made using Node.js and TypeScript for mini-onboarding
 To set up the project there are some steps:
 1. Clone the project
 2. Install packages running the follow command:
-  
-  yarn install or npm install
-  
-  Download and import database to your machine ( mysql database )
-  
-  yarn run dev or npm run dev
+  ``
+  yarn install
+  ``
+  3. Download and import database to your machine ( mysql database )
  
- That's all, after this just run yarn run dev or npm run dev to start server
+ That's all, after this just ``yarn run dev`` to start server
  
  The database file is in the database folder with keleya name ( src/database/keleya.sql )
 
@@ -32,11 +30,13 @@ Authenticate a user and return a token
 ![Authenticate user](https://github.com/antonio-nicolau/keleya-server/blob/master/screenshots/auth_user.png)
 
 ## Tests
-I used Jest to write all the tests
+I used Jest to write unitary test and supertest to integration test
 
 All the tests are in the tests folder
 
 To run all tests:
+``
+yarn test
+``
 
-yarn test or npm test
-
+![Tests running](https://github.com/antonio-nicolau/keleya-server/blob/master/screenshots/test_run.png)
