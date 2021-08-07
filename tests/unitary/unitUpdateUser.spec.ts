@@ -1,7 +1,7 @@
 import { isTokenValid } from "../../src/controllers/tokenController";
 import UserController from "../../src/controllers/userController";
 
-describe("UPDATE USER", () => {
+describe("Unitary Test - UPDATE USER", () => {
     const userController = new UserController()
 
     const user = {
@@ -16,15 +16,16 @@ describe("UPDATE USER", () => {
     }
 
 
-    it("Should be able to update user", async () => {
+    it("Unitary Test -> Should be able to update user", async () => {
         const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImVtYWlsIjoiYWRpbHNvbkBnbWFpbC5jb20iLCJpYXQiOjE2Mjc2ODIxNzl9.mOEbQENHdkcyIePqzhNxwwGqBipQGth-nb0tTec7ZPE";
         const response = await userController.updateUser(user, token);
 
         const isValidToken = isTokenValid(response);
+        expect(response != null).toBe(true);
         expect(isValidToken).toBe(true);
     });
 
-    it("Should not be able to update user", async () => {
+    it("Unitary Test -> Should not be able to update user", async () => {
         const token = "";
         let response;
         try {

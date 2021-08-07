@@ -2,10 +2,10 @@
 import UserController from '../../src/controllers/userController';
 import { User } from '../../src/models/user';
 
-describe("Create User", () => {
+describe("Unitary Test - Create User", () => {
     const userController = new UserController()
 
-    it("Should be able to create a new user", async () => {
+    it("Unitary Test -> Should be able to create a new user", async () => {
         const user = {
             name: `test${Date.now()}`,
             email: `joyce${Date.now()}@gmail.com`,
@@ -21,7 +21,7 @@ describe("Create User", () => {
         expect(response).toHaveProperty('id');
     })
 
-    it("Should be able to create a new user", async () => {
+    it("Unitary Test -> Should be able to create a new user", async () => {
         //This user already exist
         const user = {
             name: `test${Date.now()}`,

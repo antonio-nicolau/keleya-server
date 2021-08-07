@@ -1,7 +1,7 @@
 import AuthController from '../../src/controllers/authController';
 import { User } from '../../src/models/user';
 
-describe("SignIn User",()=>{
+describe("Unitary Test - SignIn User",()=>{
     const authController = new AuthController();
 
     const user = {
@@ -9,7 +9,7 @@ describe("SignIn User",()=>{
         password: "testpassword",
     }
 
-    it("Should be able to sign in",async()=>{
+    it("Unitary Test -> Should be able to sign in",async()=>{
         const response = await authController.signIn(user);
 
         expect(response).toBeInstanceOf(User);
@@ -17,7 +17,7 @@ describe("SignIn User",()=>{
         expect(response).toHaveProperty("babyBirthDate");
     });
 
-    it("Should not be able to sign in",async()=>{
+    it("Unitary Test -> Should not be able to sign in",async()=>{
         user.password = "any single password";
         try {
             await authController.signIn(user);

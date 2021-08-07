@@ -1,6 +1,6 @@
 import { createToken, isTokenValid } from '../../src/controllers/tokenController';
 
-describe("Token Controller", () => {
+describe("Unitary Test - Token Controller", () => {
 
     let myToken:string;
 
@@ -10,7 +10,7 @@ describe("Token Controller", () => {
         password: "testpassword",
     }
 
-    it("Should generate a new token",  () => {
+    it("Unitary Test - Should generate a new token",  () => {
         const { id, email } = user;
         myToken = createToken(id, email);
 
@@ -18,12 +18,12 @@ describe("Token Controller", () => {
         expect(isToken).toBe(true);
     });
 
-    it("Validate valide token",  () => {
+    it("Unitary Test -> Validate valide token",  () => {
         const isToken = isTokenValid(myToken);
         expect(isToken).toBe(true);
     });
 
-    it("Validate invalid token",()=>{
+    it("Unitary Test -> Validate invalid token",()=>{
         const isToken = isTokenValid("");
         expect(isToken).toBe(false);
     });
